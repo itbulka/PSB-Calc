@@ -1,0 +1,112 @@
+:root {
+	--defaultGap: 6px;
+	--colorOperation: #ffae00;
+	--colorOperationSecondary: #ffc649;
+	--colorMain: #363333;
+	--colorSecondary: #4e4d4d;
+	--textColor: #fff;
+}
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+body {
+	background-color: #000;
+}
+
+.calculator {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+	max-width: 340px;
+	margin: 100px auto;
+}
+
+input {
+	width: 100%;
+	font-size: 24px;
+	padding: 10px;
+	border: var(--colorSecondary) 2px solid;
+	background-color: var(--colorMain);
+	color: #fff;
+	border-radius: 12px;
+}
+
+input:focus,
+input:hover {
+	outline: none;
+	outline: #fff 2px solid;
+}
+
+.keyboard {
+	display: flex;
+	gap: 6px;
+}
+
+.numbers-grid {
+	display: grid;
+	align-self: center;
+	grid-template-columns: repeat(3, 80px);
+	grid-template-rows: repeat(3, 80px);
+	gap: var(--defaultGap);
+	grid-auto-rows: 80px;
+}
+
+.operation-grid {
+	display: grid;
+	grid-template-columns: 80px;
+	grid-template-rows: repeat(4, 80px);
+	gap: var(--defaultGap);
+}
+
+.button_equel {
+	grid-column: span 2;
+}
+
+.button {
+	cursor: pointer;
+	color: #fff;
+	font-size: 24px;
+	font-weight: 800;
+	background-color: var(--colorMain);
+	border-radius: 12px;
+	border: none;
+}
+
+.button_copy {
+  height: 40px;
+	cursor: pointer;
+	color: #fff;
+	font-size: 20px;
+	font-weight: 400;
+	background-color: var(--colorMain);
+	border-radius: 12px;
+	border: none;
+}
+
+.operation-grid .button {
+	background-color: var(--colorOperation);
+}
+
+.operation-grid .button:hover {
+	background-color: var(--colorOperationSecondary);
+}
+
+.button:hover {
+	background-color: var(--colorSecondary);
+}
+
+.buttons {
+	display: flex;
+	height: 80px;
+	gap: var(--defaultGap);
+}
+
+.buttons .button {
+	font-size: 20px;
+	font-weight: 400;
+	flex-grow: 1;
+}
